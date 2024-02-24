@@ -3,18 +3,17 @@
 #include <iostream>
 using namespace std;
 
-class bikeConfig
+class BikeConfig
 {
     string name, country;
-    bool color;
-    int price;
+    int price, color;
 public:
-    bikeConfig() : name(""), price(0), color(0), country(""){};
+    BikeConfig() : name(""), price(0), color(0), country(""){};
 
-    bikeConfig(string name);
-    bikeConfig(string name, int price);
-    bikeConfig(string name, int price, bool color);
-    bikeConfig(string name, int price, bool color, string country);
+    BikeConfig(string name);
+    BikeConfig(string name, int price);
+    BikeConfig(string name, int price, int color);
+    BikeConfig(string name, int price, int color, string country);
 
     string show()
     {
@@ -45,7 +44,32 @@ public:
 
         return str;
     };
-};
 
+    void init(string name)
+    {
+        this->name = name;
+    };
+
+    void init(string name, int price)
+    {
+        this->name = name;
+        this->price = price;
+    };
+
+    void init(string name, int price, int color)
+    {
+        this->name = name;
+        this->price = price;
+        this->color = color;
+    };
+
+    void init(string name, int price, int color, string country)
+    {
+        this->name = name;
+        this->price = price;
+        this->color = color;
+        this->country = country;
+    };
+};
 
 #endif

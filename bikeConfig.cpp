@@ -1,19 +1,19 @@
 #include "bikeConfig.h"
 
-bikeConfig::bikeConfig(string name)
+BikeConfig::BikeConfig(string name)
     : price(0), color(0), country("")
 {
     this->name = name;
 };
 
-bikeConfig::bikeConfig(string name, int price)
-    : color(0), country("")
+BikeConfig::BikeConfig(string name, int price)
+    : color(1), country("")
 {
     this->name = name;
     this->price = price;
 };
 
-bikeConfig::bikeConfig(string name, int price, bool color)
+BikeConfig::BikeConfig(string name, int price, int color)
     : country("")
 {
     this->name = name;
@@ -21,7 +21,7 @@ bikeConfig::bikeConfig(string name, int price, bool color)
     this->color = color;
 };
 
-bikeConfig::bikeConfig(string name, int price, bool color, string country)
+BikeConfig::BikeConfig(string name, int price, int color, string country)
 {
     this->name = name;
     this->price = price;
