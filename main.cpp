@@ -26,8 +26,9 @@ int main() {
 
 
 //    Employer♥
+    Employer Employer1("Andrew", "12.02.2004", "USA", 160000);
 
-    cout << "Bikes♥_______________\n" << Bike.show() << endl
+    cout << "Bikes________________\n" << Bike.show() << endl
          << "1____________________\n" << Bike1.show() << endl
          << "2____________________\n" << Bike2.show() << endl
          << "3____________________\n" << Bike3.show() << endl
@@ -35,9 +36,10 @@ int main() {
          << "4____________________\n" << Bikes[0].show() << endl
          << "5____________________\n" << Bikes[1].show() << endl
          << "6____________________\n" << Bikes[2].show() << endl << "\n"
-         << "Clients♥_____________\n" << Client1.show() << endl
+         << "Clients______________\n" << Client1.show() << endl
          << "2____________________\n" << Client2.show() << endl
-         << "3____________________\n" << Client3.show() << endl;
+         << "3____________________\n" << Client3.show() << endl << "\n"
+         << "Employers____________\n" << Employer1.show() << endl;
 
     return 0;
 }
