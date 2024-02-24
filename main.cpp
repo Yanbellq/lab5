@@ -3,7 +3,8 @@
 #include "employer.h"
 #include "bikeConfig.h"
 
-int main() {
+int main()
+{
 
 //    Bike♥
     BikeConfig Bike;
@@ -27,6 +28,7 @@ int main() {
 
 //    Employer♥
     Employer Employer1("Andrew", "12.02.2004", "USA", 160000);
+    Employer Employer2{Employer1};
 
     cout << "Bikes________________\n" << Bike.show() << endl
          << "1____________________\n" << Bike1.show() << endl
@@ -39,7 +41,8 @@ int main() {
          << "Clients______________\n" << Client1.show() << endl
          << "2____________________\n" << Client2.show() << endl
          << "3____________________\n" << Client3.show() << endl << "\n"
-         << "Employers____________\n" << Employer1.show() << endl;
+         << "Employers____________\n" << Employer1.show() << endl
+         << "1____________________\n" << Employer2.show() << endl;
 
     return 0;
 }

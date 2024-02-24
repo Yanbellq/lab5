@@ -54,6 +54,11 @@ public:
 
         return str;
     };
+
+    ~Client()
+    {
+        cout << "Destructor called\n";
+    };
 };
 
 #endif

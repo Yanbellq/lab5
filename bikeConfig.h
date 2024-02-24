@@ -42,6 +42,8 @@ public:
 
         str = str + "Country: " + country + "\n\n";
 
+        cout << "Constructor called\n\n";
+
         return str;
     };
 
@@ -69,6 +71,11 @@ public:
         this->price = price;
         this->color = color;
         this->country = country;
+    };
+
+    ~BikeConfig()
+    {
+        cout << "Destructor called\n";
     };
 };
 

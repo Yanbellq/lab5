@@ -7,3 +7,13 @@ Employer::Employer(string name, string dateOfBirthday, string placeOfLife, int s
     this->placeOfLife = placeOfLife;
     this->salary = salary;
 };
+
+
+// Copy constructor♥
+Employer::Employer(const Employer& p)
+{
+    name = p.name;
+    dateOfBirthday = p.dateOfBirthday;
+    placeOfLife = p.placeOfLife;
+    salary = p.salary + 1;
+};
