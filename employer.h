@@ -15,7 +15,7 @@ public:
     Employer(const Employer& p);
 
 //    Move constructor♥
-    Employer(Employer &&p);
+    Employer(Employer&& p);
 
     string show()
     {
