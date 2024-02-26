@@ -12,10 +12,10 @@ public:
     Employer(string name, string dateOfBirthday, string placeOfLife, int salary);
 
 //    Copy constructor♥
-    Employer(const Employer& p);
+    Employer(const Employer& other);
 
 //    Move constructor♥
-    Employer(Employer&& p);
+    Employer(Employer&& other);
 
     string show()
     {

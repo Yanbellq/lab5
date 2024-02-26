@@ -36,6 +36,21 @@ public:
                 break;
 
             case 3:
+                str = str + "Color: Yellow" + "\n";
+                break;
+            case 4:
+                str = str + "Color: Green" + "\n";
+                break;
+
+            case 5:
+                str = str + "Color: Blue" + "\n";
+                break;
+
+            case 6:
+                str = str + "Color: Brown" + "\n";
+                break;
+
+            case 7:
                 str = str + "Color: Red" + "\n";
                 break;
         };

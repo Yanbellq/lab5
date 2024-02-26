@@ -2,6 +2,7 @@
 #include "client.h"
 #include "employer.h"
 #include "bikeConfig.h"
+using namespace std;
 
 int main()
 {
@@ -28,10 +29,16 @@ int main()
 
 //    Employer♥
     Employer Employer1("Andrew", "12.02.2004", "USA", 160000);
-    Employer Employer2{Employer1};
 
-    Employer Employer3("Kevin", "15.22.2222", "America", 1);
-    Employer Employer4 = move(Employer3);;
+    // Copy Employer1 to Employer2
+    Employer Employer2{Employer1};
+    Employer Employer5{Employer1};
+
+
+    Employer Employer3("Kevin", "15.22.2222", "America", 15000);
+
+    // Move Employer3 to Employer4, and clear Employer3
+    Employer Employer4 = move(Employer3);
 
 
     cout << "Bikes________________\n" << Bike.show() << endl
@@ -48,7 +55,8 @@ int main()
          << "Employers____________\n" << Employer1.show() << endl
          << "1____________________\n" << Employer2.show() << endl
          << "2____________________\n" << Employer3.show() << endl
-         << "3____________________\n" << Employer4.show() << endl;
+         << "3____________________\n" << Employer4.show() << endl
+         << "4____________________\n" << Employer5.show() << endl;
 
     return 0;
 }
