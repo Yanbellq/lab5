@@ -7,6 +7,8 @@ class Employer
 {
     string name, dateOfBirthday, placeOfLife;
     int salary;
+
+    static int employers;
 public:
     Employer() : name(""), dateOfBirthday("0.00.0000"), placeOfLife(""), salary(0){};
     Employer(string name, string dateOfBirthday, string placeOfLife, int salary);
@@ -17,18 +19,11 @@ public:
 //    Move constructor♥
     Employer(Employer&& other);
 
-    string show()
-    {
-        return "Name: " + name + "\n" +
-               "Date of Birthday: " + dateOfBirthday + "\n" +
-               "Place of Life: " + placeOfLife + "\n" +
-               "Salary: " + "$" + to_string(salary) +"\n";
-    };
+    string show() const;
 
-    ~Employer()
-    {
-        cout << "Destructor called\n";
-    };
+    static int countOfEmployers() { return employers; };
+
+    ~Employer();
 };
 
 

@@ -27,18 +27,12 @@ int main()
     Client Client3("Vitaliy", 21, "Germany", 1, 1);
 
 
-//    Employer♥
-    Employer Employer1("Andrew", "12.02.2004", "USA", 160000);
-
-    // Copy Employer1 to Employer2
-    Employer Employer2{Employer1};
-    Employer Employer5{Employer1};
 
 
-    Employer Employer3("Kevin", "15.22.2222", "America", 15000);
 
-    // Move Employer3 to Employer4, and clear Employer3
-    Employer Employer4 = move(Employer3);
+
+
+
 
 
     cout << "Bikes________________\n" << Bike.show() << endl
@@ -51,12 +45,40 @@ int main()
          << "6____________________\n" << Bikes[2].show() << endl << "\n"
          << "Clients______________\n" << Client1.show() << endl
          << "2____________________\n" << Client2.show() << endl
-         << "3____________________\n" << Client3.show() << endl << "\n"
-         << "Employers____________\n" << Employer1.show() << endl
-         << "1____________________\n" << Employer2.show() << endl
-         << "2____________________\n" << Employer3.show() << endl
-         << "3____________________\n" << Employer4.show() << endl
-         << "4____________________\n" << Employer5.show() << endl;
+         << "3____________________\n" << Client3.show() << endl << "\n\n\n\n";
+
+
+
+
+//    Employers♥
+
+    cout << "Count of Employers: " << Employer::countOfEmployers() << endl << endl;
+
+    const Employer Employer1("Andrew", "12.02.2004", "USA", 160000);
+    cout << "1____________________\n" << Employer1.show() << endl;
+
+
+    cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
+
+    // Copy Employer1 to Employer2
+    const Employer Employer2{Employer1};
+    cout << "2____________________\n" << Employer2.show() << endl;
+
+
+    cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
+
+    Employer Employer3("Kevin", "15.22.2222", "America", 15000);
+    cout << "3____________________\n" << Employer3.show() << endl;
+
+
+    cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
+
+    // Move Employer3 to Employer4, and clear Employer3
+    Employer Employer4 = move(Employer3);
+    cout << "4____________________\n" << Employer4.show() << endl;
+
+    cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
+
 
     return 0;
 }

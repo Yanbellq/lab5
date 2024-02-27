@@ -1,8 +1,20 @@
 #include "employer.h"
 
+string Employer::show() const
+{
+    return "Name: " + name + "\n" +
+    "Date of Birthday: " + dateOfBirthday + "\n" +
+    "Place of Life: " + placeOfLife + "\n" +
+    "Salary: " + "$" + to_string(salary) +"\n";
+}
+
+int Employer::employers = 0;
+
 Employer::Employer(string name, string dateOfBirthday, string placeOfLife, int salary)
     : name(""), dateOfBirthday("0.00.0000"), placeOfLife("none"), salary(0)
 {
+    employers++;
+
     this->name = name;
     this->dateOfBirthday = dateOfBirthday;
     this->placeOfLife = placeOfLife;
@@ -14,6 +26,8 @@ Employer::Employer(string name, string dateOfBirthday, string placeOfLife, int s
 Employer::Employer(const Employer& other)
     : name(""), dateOfBirthday("0.00.0000"), placeOfLife("none"), salary(0)
 {
+    employers++;
+
     this->name = other.name;
     this->dateOfBirthday = other.dateOfBirthday;
     this->placeOfLife = other.placeOfLife;
@@ -37,6 +51,8 @@ Employer::Employer(const Employer& other)
 Employer::Employer(Employer&& other)
     : name(other.name), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife), salary(other.salary)
 {
+    employers++;
+
     other.name = "";
     other.dateOfBirthday = "";
     other.placeOfLife = "";
@@ -48,3 +64,9 @@ Employer::Employer(Employer&& other)
  * З назви можна зрозуміти що це конструктор переміщення, і що він переносить значення з одного об'єкта у інший.
  * Саме тому створюючи конструктор ми спочатку копіюємо значення з одного об'єкта у інший, і потім зануляєм перший.
 */
+
+Employer::~Employer()
+{
+    employers--;
+    cout << "Destructor called";
+};
