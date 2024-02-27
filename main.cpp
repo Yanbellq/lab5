@@ -28,13 +28,6 @@ int main()
 
 
 
-
-
-
-
-
-
-
     cout << "Bikes________________\n" << Bike.show() << endl
          << "1____________________\n" << Bike1.show() << endl
          << "2____________________\n" << Bike2.show() << endl
@@ -77,6 +70,11 @@ int main()
     Employer Employer4 = move(Employer3);
     cout << "4____________________\n" << Employer4.show() << endl;
 
+    cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
+
+    // Shalow Copy Employer2 to Employer5
+    Employer Employer5 = Employer2;
+    cout << "5____________________\n" << Employer5.show() << endl;
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
 

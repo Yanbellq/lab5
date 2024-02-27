@@ -15,6 +15,7 @@ public:
 
 //    Copy constructor♥
     Employer(const Employer& other);
+    Employer(Employer& other);
 
 //    Move constructor♥
     Employer(Employer&& other);

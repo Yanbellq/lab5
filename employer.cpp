@@ -33,6 +33,12 @@ Employer::Employer(const Employer& other)
     this->placeOfLife = other.placeOfLife;
     this->salary = other.salary + 1;
 };
+// Shalow Copy constructor♥
+Employer::Employer(Employer& other)
+    : name(other.name), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife), salary(other.salary)
+{
+    employers++;
+};
 
 /*
  * Різниця між Deep та Shalow Copy у тому що:
