@@ -16,11 +16,13 @@ public:
     };
 
 
+    // Перевантаження бінарного оператора
     Operator operator+(const Operator& other) const {
         return Operator{x + other.x, y + other.y};
     }
 
-    string show();
+    string showUnary();
+    string showBinary();
 };
 
 

@@ -85,9 +85,14 @@ int main()
 
 
     Operator p1{1, 2};
-    Operator p2 = +p1; // Виклик перевантаженого оператора `+`
+    Operator p2 = +p1; // Виклик перевантаженого унарного оператора `+`
 
-    std::cout << p2.show() << endl;
+    cout << p2.showUnary() << endl;
+
+    Operator v1{1, 2}, v2{3, 4};
+    Operator v3 = v1 + v2; // Виклик перевантаженого бінарного оператора `+`
+
+    cout << v3.showBinary() << endl;
 
     return 0;
 }
