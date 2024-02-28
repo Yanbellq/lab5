@@ -25,7 +25,7 @@ public:
 
     static int countOfEmployers() { return employers; };
 
-    //Перевантаження дружніх операторів "<<, >>"
+    // Перевантаження дружніх операторів "<<, >>"
     friend istream &operator >> (istream &is, Employer &obj)
     {
         return is >> obj.name >> obj.dateOfBirthday >> obj.placeOfLife >> obj.salary;

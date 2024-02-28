@@ -6,12 +6,12 @@ Operator::Operator(int x, int y)
     this->y = y;
 };
 
-string Operator::showUnary()
+string Operator::showUnary() const
 {
     return "\n\nX: " + to_string(x) + "\n" + "Y: " + to_string(y) + "\n";
 };
 
-string Operator::showBinary()
+string Operator::showBinary() const
 {
     return "\n\nA: " + to_string(x) + "\n" + "B: " + to_string(y) + "\n";
 };

@@ -21,8 +21,8 @@ public:
         return Operator{x + other.x, y + other.y};
     }
 
-    string showUnary();
-    string showBinary();
+    string showUnary() const;
+    string showBinary() const;
 };
 
 
