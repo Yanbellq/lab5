@@ -3,9 +3,9 @@
 string Employer::show() const
 {
     return "Name: " + name + "\n" +
-    "Date of Birthday: " + dateOfBirthday + "\n" +
-    "Place of Life: " + placeOfLife + "\n" +
-    "Salary: " + "$" + to_string(salary) +"\n";
+           "Date of Birthday: " + dateOfBirthday + "\n" +
+           "Place of Life: " + placeOfLife + "\n" +
+           "Salary: " + "$" + to_string(salary) +"\n";
 }
 
 int Employer::employers = 0;
@@ -19,25 +19,35 @@ Employer::Employer(string name, string dateOfBirthday, string placeOfLife, int s
     this->dateOfBirthday = dateOfBirthday;
     this->placeOfLife = placeOfLife;
     this->salary = salary;
+
+    cout << "Constructor called" << endl;
 };
+
+Employer::Employer(string name, int salary)
+    : name(""), salary(0)
+{
+    this->name = name;
+    this->salary = salary;
+};
+
 
 
 // Deep Copy constructor♥
 Employer::Employer(const Employer& other)
-    : name(""), dateOfBirthday("0.00.0000"), placeOfLife("none"), salary(0)
+    : name(other.name), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife), salary(other.salary + 1)
 {
     employers++;
 
-    this->name = other.name;
-    this->dateOfBirthday = other.dateOfBirthday;
-    this->placeOfLife = other.placeOfLife;
-    this->salary = other.salary + 1;
+    cout << "Deep Copy constructor called" << endl;
 };
+
 // Shalow Copy constructor♥
 Employer::Employer(Employer& other)
     : name(other.name), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife), salary(other.salary)
 {
     employers++;
+
+    cout << "Shalow Copy constructor called" << endl;
 };
 
 /*
@@ -63,6 +73,8 @@ Employer::Employer(Employer&& other)
     other.dateOfBirthday = "";
     other.placeOfLife = "";
     other.salary = 0;
+
+    cout << "Move constructor called" << endl;
 };
 
 /*
@@ -74,5 +86,5 @@ Employer::Employer(Employer&& other)
 Employer::~Employer()
 {
     employers--;
-    cout << "Destructor called";
+    cout << "Destructor called" << endl;
 };

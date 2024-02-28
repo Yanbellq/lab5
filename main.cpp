@@ -2,6 +2,8 @@
 #include "client.h"
 #include "employer.h"
 #include "bikeConfig.h"
+#include "operator.h"
+
 using namespace std;
 
 int main()
@@ -72,11 +74,20 @@ int main()
 
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
-    // Shalow Copy Employer2 to Employer5
-    Employer Employer5 = Employer2;
-    cout << "5____________________\n" << Employer5.show() << endl;
-    cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
+
+    Employer Employer5;
+    cin >> Employer5;
+    cout << Employer5;
+
+    Employer Employer6("Masha", "01.01.2001", "China", 16000);
+    cout << Employer6;
+
+
+    Operator p1{1, 2};
+    Operator p2 = +p1; // Виклик перевантаженого оператора `+`
+
+    std::cout << p2.show() << endl;
 
     return 0;
 }

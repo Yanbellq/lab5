@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 23)
 add_executable(lab3 main.cpp
         bikeConfig.cpp
         client.cpp
-        employer.cpp)
+        employer.cpp
+        operator.cpp
+        operator.h)
