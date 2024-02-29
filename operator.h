@@ -10,16 +10,10 @@ public:
     Operator(int x, int y);
 
     // Перевантаження унарного оператора
-    Operator operator+() const
-    {
-        return Operator{x, y};
-    };
-
+    Operator operator + () const;
 
     // Перевантаження бінарного оператора
-    Operator operator+(const Operator& other) const {
-        return Operator{x + other.x, y + other.y};
-    }
+    Operator operator + (const Operator& other) const;
 
     string showUnary() const;
     string showBinary() const;

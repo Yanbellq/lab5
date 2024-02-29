@@ -6,12 +6,12 @@ string Employer::show() const
            "Date of Birthday: " + dateOfBirthday + "\n" +
            "Place of Life: " + placeOfLife + "\n" +
            "Salary: " + "$" + to_string(salary) +"\n";
-}
+};
 
 int Employer::employers = 0;
 
 Employer::Employer(string name, string dateOfBirthday, string placeOfLife, int salary)
-    : name(""), dateOfBirthday("0.00.0000"), placeOfLife("none"), salary(0)
+   : People(), dateOfBirthday("0.00.0000"), placeOfLife("none"), salary(0)
 {
     employers++;
 
@@ -24,7 +24,7 @@ Employer::Employer(string name, string dateOfBirthday, string placeOfLife, int s
 };
 
 Employer::Employer(string name, int salary)
-    : name(""), salary(0)
+    : People(), salary(0)
 {
     this->name = name;
     this->salary = salary;
@@ -34,7 +34,7 @@ Employer::Employer(string name, int salary)
 
 // Deep Copy constructor♥
 Employer::Employer(const Employer& other)
-    : name(other.name), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife), salary(other.salary + 1)
+    : People(other), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife), salary(other.salary + 1)
 {
     employers++;
 
@@ -43,7 +43,7 @@ Employer::Employer(const Employer& other)
 
 // Shalow Copy constructor♥
 Employer::Employer(Employer& other)
-    : name(other.name), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife), salary(other.salary)
+    : People(other), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife), salary(other.salary)
 {
     employers++;
 
@@ -65,7 +65,7 @@ Employer::Employer(Employer& other)
 
 //Move constructor♥
 Employer::Employer(Employer&& other)
-    : name(other.name), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife), salary(other.salary)
+    : People(other), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife), salary(other.salary)
 {
     employers++;
 

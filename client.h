@@ -1,15 +1,16 @@
 #ifndef LAB3_CLIENT_H
 #define LAB3_CLIENT_H
 #include <iostream>
+#include "people.h"
 using namespace std;
 
-class Client
+class Client : public People
 {
-    string name, location, bikeMake;
+    string location, bikeMake;
     bool buyBike, credit;
     int age;
 public:
-    Client() : name(""), age(0), location(""), buyBike(0){};
+    Client() : People(), age(0), location(""), buyBike(0){};
 
     Client(string name);
     Client(string name, int age);

@@ -5,6 +5,7 @@ using namespace std;
 
 class BikeConfig
 {
+protected:
     string name, country;
     int price, color;
 public:
@@ -93,5 +94,10 @@ public:
         cout << "Destructor called\n";
     };
 };
+
+
+
+
+
 
 #endif

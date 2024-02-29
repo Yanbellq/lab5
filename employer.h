@@ -1,16 +1,17 @@
 #ifndef LAB3_EMPLOYER_H
 #define LAB3_EMPLOYER_H
 #include <iostream>
+#include "people.h"
 using namespace std;
 
-class Employer
+class Employer : public People
 {
-    string name, dateOfBirthday, placeOfLife;
+    string dateOfBirthday, placeOfLife;
     int salary;
 
     static int employers;
 public:
-    Employer() : name(""), dateOfBirthday("0.00.0000"), placeOfLife(""), salary(0){};
+    Employer() : People(), dateOfBirthday("0.00.0000"), placeOfLife(""), salary(0) { employers++; };
     Employer(string name, int salary);
     Employer(string name, string dateOfBirthday, string placeOfLife, int salary);
 
@@ -29,7 +30,7 @@ public:
     friend istream &operator >> (istream &is, Employer &obj)
     {
         return is >> obj.name >> obj.dateOfBirthday >> obj.placeOfLife >> obj.salary;
-    };
+    };;
 
     friend ostream &operator << (ostream &os, Employer &obj)
     {

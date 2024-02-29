@@ -7,4 +7,9 @@ add_executable(lab4 main.cpp
         bikeConfig.cpp
         client.cpp
         employer.cpp
-        operator.cpp)
+        operator.cpp
+        mountainBike.cpp
+        mountainBike.h
+        people.cpp
+        people.h
+)

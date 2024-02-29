@@ -2,7 +2,8 @@
 #include "client.h"
 #include "employer.h"
 #include "bikeConfig.h"
-#include "operator.h"
+#include "mountainBike.h"
+//#include "operator.h"
 
 using namespace std;
 int main()
@@ -20,7 +21,6 @@ int main()
     Bikes[0].init("Bike[0]", 12000, 1, "Italy");
     Bikes[1].init("Bike[1]", 10000, 3, "France");
     Bikes[2].init("Bike[2]", 20000, 2, "Chilie");
-
 
 //    Client♥
     Client Client1("Arsen", 19, "Ukraine", 1, 0);
@@ -73,25 +73,33 @@ int main()
 
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
+    Employer EmployerNone;
+    cout << "5____________________\n" << EmployerNone.show() << endl;
+
+    cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
 
-    Employer Employer5;
-    cin >> Employer5;
-    cout << Employer5;
+//    Employer Employer5;
+//    cin >> Employer5;
+//    cout << Employer5;
+//
+//    Employer Employer6("Masha", "01.01.2001", "China", 16000);
+//    cout << Employer6;
 
-    Employer Employer6("Masha", "01.01.2001", "China", 16000);
-    cout << Employer6;
+//    Operator p1{1, 2};
+//    Operator p2 = +p1; // Виклик перевантаженого унарного оператора `+`
+//
+//    cout << p2.showUnary() << endl;
+//
+//    Operator v1{1, 2}, v2{3, 4};
+//    Operator v3 = v1 + v2; // Виклик перевантаженого бінарного оператора `+`
+//
+//    cout << v3.showBinary() << endl << endl;
 
+    // BikeConfig Inheritance♥
+    MountainBike MtbBike1("MtbBike", 15000);
 
-    Operator p1{1, 2};
-    Operator p2 = +p1; // Виклик перевантаженого унарного оператора `+`
-
-    cout << p2.showUnary() << endl;
-
-    Operator v1{1, 2}, v2{3, 4};
-    Operator v3 = v1 + v2; // Виклик перевантаженого бінарного оператора `+`
-
-    cout << v3.showBinary() << endl;
+    cout << MtbBike1.show() << endl;
 
     return 0;
 }
