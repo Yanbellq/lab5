@@ -16,83 +16,14 @@ public:
     BikeConfig(string name, int price, int color);
     BikeConfig(string name, int price, int color, string country);
 
-    string show()
-    {
-        string str;
-        str =  "Name: " + name + "\n" +
-               "Price: " + "$" + to_string(price) + "\n";
+    string show();
 
-        switch (color)
-        {
-            case 0:
-                str = str + "Color: None" + "\n";
-                break;
+    void init(string name);
+    void init(string name, int price);
+    void init(string name, int price, int color);
+    void init(string name, int price, int color, string country);
 
-            case 1:
-                str = str + "Color: White" + "\n";
-                break;
-
-            case 2:
-                str = str + "Color: Black" + "\n";
-                break;
-
-            case 3:
-                str = str + "Color: Yellow" + "\n";
-                break;
-            case 4:
-                str = str + "Color: Green" + "\n";
-                break;
-
-            case 5:
-                str = str + "Color: Blue" + "\n";
-                break;
-
-            case 6:
-                str = str + "Color: Brown" + "\n";
-                break;
-
-            case 7:
-                str = str + "Color: Red" + "\n";
-                break;
-        };
-
-        str = str + "Country: " + country + "\n\n";
-
-        cout << "Constructor called\n\n";
-
-        return str;
-    };
-
-    void init(string name)
-    {
-        this->name = name;
-    };
-
-    void init(string name, int price)
-    {
-        this->name = name;
-        this->price = price;
-    };
-
-    void init(string name, int price, int color)
-    {
-        this->name = name;
-        this->price = price;
-        this->color = color;
-    };
-
-    void init(string name, int price, int color, string country)
-    {
-        this->name = name;
-        this->price = price;
-        this->color = color;
-        this->country = country;
-    };
-
-    ~BikeConfig()
-    {
-        cout << "Destructor called\n";
-    };
+    ~BikeConfig();
 };
 
 

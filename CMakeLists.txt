@@ -12,4 +12,6 @@ add_executable(lab4 main.cpp
         mountainBike.h
         people.cpp
         people.h
+        mtbBike.cpp
+        mtbBike.h
 )
