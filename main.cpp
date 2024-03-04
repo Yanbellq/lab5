@@ -1,8 +1,8 @@
 #include <iostream>
-#include "client.h"
-#include "employer.h"
-#include "bikeConfig.h"
-#include "mountainBike.h"
+#include "classes/client.h"
+#include "classes/employer.h"
+#include "classes/bikeConfig.h"
+#include "classes/mtbBike.h"
 //#include "operator.h"
 
 using namespace std;
@@ -68,7 +68,7 @@ int main()
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
     // Move Employer3 to Employer4, and clear Employer3
-    Employer Employer4 = move(Employer3);
+    Employer Employer4 = std::move(Employer3);
     cout << "4____________________\n" << Employer4.show() << endl;
 
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
@@ -78,7 +78,7 @@ int main()
 
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
-
+//
 //    Employer Employer5;
 //    cin >> Employer5;
 //    cout << Employer5;
@@ -97,7 +97,7 @@ int main()
 //    cout << v3.showBinary() << endl << endl;
 
     // BikeConfig Inheritance♥
-    MountainBike MtbBike1("MtbBike", 15000);
+    MountainBike MtbBike1("MtbBike1", 15000, 6, "Ukraine", 29, 0.005, 1, 1, 1);
 
     cout << MtbBike1.show() << endl;
 

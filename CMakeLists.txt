@@ -8,10 +8,10 @@ add_executable(lab4 main.cpp
         client.cpp
         employer.cpp
         operator.cpp
-        mountainBike.cpp
-        mountainBike.h
         people.cpp
         people.h
         mtbBike.cpp
         mtbBike.h
+        bmxBike.cpp
+        bmxBike.h
 )

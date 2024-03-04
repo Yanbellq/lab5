@@ -9,7 +9,7 @@ protected:
     string name, country;
     int price, color;
 public:
-    BikeConfig() : name(""), price(0), color(0), country(""){};
+    BikeConfig() : name(""), price(0), color(0), country("") {};
 
     BikeConfig(string name);
     BikeConfig(string name, int price);
