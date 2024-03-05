@@ -1,26 +1,28 @@
 #include <iostream>
 #include "classes/client.h"
 #include "classes/employer.h"
-#include "classes/bikeConfig.h"
 #include "classes/mtbBike.h"
-//#include "operator.h"
+#include "classes/bmxBike.h"
+#include "classes/operator.h"
 
 using namespace std;
 int main()
 {
 
 //    Bike♥
-    BikeConfig Bike;
+    MountainBike MtbBike1("MtbBike1", 15000, 6, "Ukraine", 29, 0.005, 1, 1, 1);
+    cout << "\n\nMTB Bikes____________\n" << MtbBike1.show() << endl << endl << endl;
 
-    BikeConfig Bike1("Bike1");
-    BikeConfig Bike2("Bike2", 15000);
-    BikeConfig Bike3("Bike3", 15000, 2);
-    BikeConfig Bike4("Bike4", 15000, 3, "Ukraine");
 
-    BikeConfig Bikes[3];
-    Bikes[0].init("Bike[0]", 12000, 1, "Italy");
-    Bikes[1].init("Bike[1]", 10000, 3, "France");
-    Bikes[2].init("Bike[2]", 20000, 2, "Chilie");
+    BmxBike BmxBike1("BmxBike1", 10000, 1, "France", 35, 20, 5);
+    cout << "\nBMX Bikes____________\n" << BmxBike1.show() << endl;
+
+    BmxBike BmxBike2("BmxBike2", 5000, 2, "Germany", 20, 10, 20);
+    cout << "\n2(before changes)____\n" << BmxBike2.show() << endl;
+
+    BmxBike2 = BmxBike1;
+    cout << "\n2(after changes)_____\n" << BmxBike2.show() << endl << endl << endl;
+
 
 //    Client♥
     Client Client1("Arsen", 19, "Ukraine", 1, 0);
@@ -29,15 +31,7 @@ int main()
 
 
 
-    cout << "Bikes________________\n" << Bike.show() << endl
-         << "1____________________\n" << Bike1.show() << endl
-         << "2____________________\n" << Bike2.show() << endl
-         << "3____________________\n" << Bike3.show() << endl
-         << "3____________________\n" << Bike4.show() << endl
-         << "4____________________\n" << Bikes[0].show() << endl
-         << "5____________________\n" << Bikes[1].show() << endl
-         << "6____________________\n" << Bikes[2].show() << endl << "\n"
-         << "Clients______________\n" << Client1.show() << endl
+    cout << "Clients______________\n" << Client1.show() << endl
          << "2____________________\n" << Client2.show() << endl
          << "3____________________\n" << Client3.show() << endl << "\n\n\n\n";
 
@@ -78,28 +72,22 @@ int main()
 
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
-//
-//    Employer Employer5;
-//    cin >> Employer5;
-//    cout << Employer5;
-//
-//    Employer Employer6("Masha", "01.01.2001", "China", 16000);
-//    cout << Employer6;
 
-//    Operator p1{1, 2};
-//    Operator p2 = +p1; // Виклик перевантаженого унарного оператора `+`
-//
-//    cout << p2.showUnary() << endl;
-//
-//    Operator v1{1, 2}, v2{3, 4};
-//    Operator v3 = v1 + v2; // Виклик перевантаженого бінарного оператора `+`
-//
-//    cout << v3.showBinary() << endl << endl;
+    Employer Employer5;
+    cin >> Employer5;
+    cout << Employer5;
 
-    // BikeConfig Inheritance♥
-    MountainBike MtbBike1("MtbBike1", 15000, 6, "Ukraine", 29, 0.005, 1, 1, 1);
+    Employer Employer6("Masha", "01.01.2001", "China", 16000);
+    cout << Employer6;
 
-    cout << MtbBike1.show() << endl;
+    Operator p1{1, 2};
+    Operator p2 = +p1; // Виклик перевантаженого унарного оператора `+`
 
+    cout << p2.showUnary() << endl;
+
+    Operator v1{1, 2}, v2{3, 4};
+    Operator v3 = v1 + v2; // Виклик перевантаженого бінарного оператора `+`
+
+    cout << v3.showBinary() << endl << endl;
     return 0;
 }

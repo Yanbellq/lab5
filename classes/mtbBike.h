@@ -16,7 +16,6 @@ public:
                  bool haveSpeedChanger, bool haveFirstAbsorber, bool haveLastAbsorber);
 
     string show();
-    //string showPrecision();
 };
 
 

@@ -16,14 +16,9 @@ public:
     BikeConfig(string name, int price, int color);
     BikeConfig(string name, int price, int color, string country);
 
-    string show();
-
-    void init(string name);
-    void init(string name, int price);
-    void init(string name, int price, int color);
-    void init(string name, int price, int color, string country);
-
     ~BikeConfig();
+
+    BikeConfig &operator=(const BikeConfig &obj);
 };
 
 

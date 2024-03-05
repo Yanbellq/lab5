@@ -3,6 +3,7 @@
 MountainBike::MountainBike
         (string name, int price, int color, string country, int tiresDiameter, double frameThickness,
          bool haveSpeedChanger, bool haveFirstAbsorber, bool haveLastAbsorber)
+        : BikeConfig(name, price, color, country)
 {
     this->name = name;
     this->price = price;
@@ -57,8 +58,8 @@ string MountainBike::show()
     };
 
     str = str + "Country: " + country + "\n" +
-          "Tires Diameter: " + to_string(tiresDiameter) + "in.\n" +
-          "Frame Thickness: " + to_string(frameThickness) + "in.\n";
+                "Tires Diameter: " + to_string(tiresDiameter) + "in.\n" +
+                "Frame Thickness: " + to_string(frameThickness) + "in.\n";
 
 
     switch (haveSpeedChanger)
