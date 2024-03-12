@@ -8,7 +8,7 @@ People::People(string name,int money, int age)
 People::People(const People &other)
     : name(other.name), money(other.money), age(other.age) {}
 
-People::People(People &&other) noexcept
+People::People(People &&other)
     : name(other.name), money(other.money), age(other.age)
 {
     other.name = "";

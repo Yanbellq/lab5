@@ -14,7 +14,7 @@ public:
     People(string name, int money, int age);
 
     People(const People& other);
-    People(People&& other) noexcept;
+    People(People&& other);
 
     ~People(){};
 

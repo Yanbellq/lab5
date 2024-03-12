@@ -2,20 +2,22 @@
 int Employer::employers = 0;
 
 Employer::Employer()
-    :People(),dateOfBirthday(""),placeOfLife(""){}
+    :People(),dateOfBirthday(""),placeOfLife("")
+    { employers++; }
 
 Employer::Employer(string name, int age, int money, string dateOfBirthday, string placeOfLife)
-   : People{name, money, age}, dateOfBirthday{dateOfBirthday}, placeOfLife{placeOfLife}
-   { employers++; };
+    : People(name, money, age), dateOfBirthday(dateOfBirthday), placeOfLife(placeOfLife)
+    { employers++; };
 
 Employer::Employer(const Employer& other)
-    : People{other}, dateOfBirthday{other.dateOfBirthday}, placeOfLife{other.placeOfLife}
+    : People(other), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife)
     { employers++; };
 
 Employer::Employer(Employer &&other)
     : People(other), dateOfBirthday(other.dateOfBirthday), placeOfLife(other.placeOfLife)
 {
     other.name = "";
+    other.age = 0;
     other.money = 0;
     other.dateOfBirthday = "";
     other.placeOfLife = "";
