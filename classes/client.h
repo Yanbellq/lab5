@@ -10,12 +10,7 @@ class Client : public People
     bool buyBike, credit;
     int age;
 public:
-    Client() : People(), age(0), location(""), buyBike(0){};
-
-    Client(string name);
-    Client(string name, int age);
-    Client(string name, int age, string location);
-    Client(string name, int age, string location, bool buyBike);
+    Client();
     Client(string name, int age, string location, bool buyBike, bool credit);
 
     string show();

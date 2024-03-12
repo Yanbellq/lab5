@@ -10,26 +10,19 @@ class Employer : public People
 
     static int employers;
 public:
-    Employer() : People(), dateOfBirthday("0.00.0000"), placeOfLife("") { employers++; };
-    Employer(string name, int money);
-    Employer(string name, string dateOfBirthday, string placeOfLife, int money);
-
-//    Copy constructor♥
+    Employer();
+    Employer(string name, int money, string dateOfBirthday, string placeOfLife);
     Employer(const Employer& other);
-    Employer(Employer& other);
+    Employer(Employer &&other);
+    ~Employer(){ employers--; };
 
-//    Move constructor♥
-    Employer(Employer&& other);
-
-    string show() const;
 
     static int countOfEmployers() { return employers; };
 
-    // Перевантаження дружніх операторів "<<, >>"
     friend istream &operator >> (istream &is, Employer &obj);
     friend ostream &operator << (ostream &os, Employer &obj);
 
-    ~Employer();
+
 };
 
 

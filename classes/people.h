@@ -10,9 +10,15 @@ protected:
     int money;
 
 public:
-    People() : name(""), money(0) { cout << "Parent defaul constructor called" << endl; };
-    People(const People& other) : name(other.name), money(other.money + 1) { cout << "Parent copy constructor called" << endl; };
-    People(People&& other) : name(other.name), money(other.money) { cout << "Parent move constructor called" << endl; };
+    People();
+    People(string name, int money);
+
+    People(const People& other);
+    People(People&& other) noexcept;
+
+    ~People(){};
+
+    friend ostream &operator <<(ostream &os,const People &obj);
 };
 
 

@@ -3,8 +3,6 @@
 #include "classes/employer.h"
 #include "classes/mtbBike.h"
 #include "classes/bmxBike.h"
-#include "classes/operator.h"
-
 using namespace std;
 int main()
 {
@@ -12,7 +10,6 @@ int main()
 //    Bike♥
     MountainBike MtbBike1("MtbBike1", 15000, 6, "Ukraine", 29, 0.005, 1, 1, 1);
     cout << "\n\nMTB Bikes____________\n" << MtbBike1.show() << endl << endl << endl;
-
 
     BmxBike BmxBike1("BmxBike1", 10000, 1, "France", 35, 20, 5);
     cout << "\nBMX Bikes____________\n" << BmxBike1.show() << endl;
@@ -25,9 +22,9 @@ int main()
 
 
 //    Client♥
-    Client Client1("Arsen", 19, "Ukraine", 1, 0);
+    Client Client1("Arsen", 19, "Ukraine", 0, 0);
     Client Client2("Danya", 18, "Italy", 0, 1);
-    Client Client3("Vitaliy", 21, "Germany", 1, 1);
+    Client Client3("Vitaliy", 21, "Germany", 0, 1);
 
 
 
@@ -42,52 +39,24 @@ int main()
 
     cout << "Count of Employers: " << Employer::countOfEmployers() << endl << endl;
 
-    const Employer Employer1("Andrew", "12.02.2004", "USA", 160000);
-    cout << "1____________________\n" << Employer1.show() << endl;
-
-
+    Employer Employer1("Andrew", 160000, "12.02.2004", "USA");
+    cout << "1____________________\n" << Employer1 << endl;
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
-    // Copy Employer1 to Employer2
-    const Employer Employer2{Employer1};
-    cout << "2____________________\n" << Employer2.show() << endl;
-
-
+    Employer Employer2{Employer1};
+    cout << "2____________________\n" << Employer2 << endl;
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
-    Employer Employer3("Kevin", "15.22.2222", "America", 15000);
-    cout << "3____________________\n" << Employer3.show() << endl;
-
-
+    Employer Employer3("Kevin", 15000, "15.22.2222", "America");
+    cout << "3___Employer3(before)\n" << Employer3 << endl;
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
-    // Move Employer3 to Employer4, and clear Employer3
     Employer Employer4 = std::move(Employer3);
-    cout << "4____________________\n" << Employer4.show() << endl;
-
+    cout << "4___________Employer4\n" << Employer4 << endl;
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
-    Employer EmployerNone;
-    cout << "5____________________\n" << EmployerNone.show() << endl;
-
+    cout << "5____Employer3(after)\n" << Employer3 << endl;
     cout << "\nCount of Employers: " << Employer::countOfEmployers() << endl << endl;
 
-
-    Employer Employer5;
-    cin >> Employer5;
-    cout << Employer5;
-
-    Employer Employer6("Masha", "01.01.2001", "China", 16000);
-    cout << Employer6;
-
-    Operator p1{1, 2};
-    Operator p2 = +p1; // Виклик перевантаженого унарного оператора `+`
-
-    cout << p2.showUnary() << endl;
-
-    Operator v1{1, 2}, v2{3, 4};
-    Operator v3 = v1 + v2; // Виклик перевантаженого бінарного оператора `+`
-
-    cout << v3.showBinary() << endl << endl;
     return 0;
 }
