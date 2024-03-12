@@ -15,12 +15,12 @@ int main()
 
 //    Bike♥
     cout << "MTB-Bike_____________" << endl;
-    MountainBike MtbBike1("F-la Dragonfly", 15, 15, "GB", 2, 15000);
+    MountainBike MtbBike1("F-la Dragonfly", 3, 15, 15, "GB", 2, 15000);
     MountainBike MtbBike2 = MtbBike1;
     cout << MtbBike1 << MtbBike2;
 
     cout << "BMX-Bike_____________" << endl;
-    BmxBike BmxBike1("erv", 2, 2, "USSR", false, 15000);
+    BmxBike BmxBike1("erv", 3, 2, 2, "USSR", false, 15000);
     BmxBike BmxBike2 = BmxBike1;
     cout << BmxBike1 << BmxBike2;
 

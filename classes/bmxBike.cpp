@@ -1,5 +1,5 @@
 #include "bmxBike.h"
-string BmxBike::hasBrakesF()
+string BmxBike::hasBrakesF() const
 {
     if (hasBrakes)
     {
@@ -13,12 +13,13 @@ string BmxBike::hasBrakesF()
 BmxBike::BmxBike()
     : BikeConfig(), hasBrakes(false) {};
 
-BmxBike::BmxBike(std::string name, int height, int width, std::string country, bool hasBrakes, int price)
-    : BikeConfig(name, price, height, width, country), hasBrakes(hasBrakes) {}
+BmxBike::BmxBike(std::string name, int color, int height, int width, std::string country, bool hasBrakes, int price)
+    : BikeConfig(name, color, price, height, width, country), hasBrakes(hasBrakes) {}
 
 ostream &operator << (ostream &os, BmxBike &obj)
 {
     return os << "Name: " << obj.name << endl
+              << obj.colorF()
               << "Height: " << obj.height << endl
               << "Width: " << obj.width << endl
               << obj.hasBrakesF()
@@ -26,8 +27,10 @@ ostream &operator << (ostream &os, BmxBike &obj)
               << "Price: $" << obj.price << endl << endl;
 };
 
-BmxBike &BmxBike::operator=(const BmxBike &obj) {
-    if (this != &obj) {
+BmxBike &BmxBike::operator=(const BmxBike &obj)
+{
+    if (this != &obj)
+    {
         BikeConfig::operator=(obj);
         hasBrakes = obj.hasBrakes;
     }

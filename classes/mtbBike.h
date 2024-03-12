@@ -9,10 +9,10 @@ class MountainBike : public BikeConfig
     int tiresType;
 public:
     MountainBike();
-    MountainBike(string name, int height, int width, string country, int tiresType, int price);
+    MountainBike(string name, int color, int height, int width, string country, int tiresType, int price);
     ~MountainBike(){};
 
-    string tiresTypeF();
+    string tiresTypeF() const;
 
     friend ostream &operator << (ostream &os, MountainBike &obj);
     MountainBike &operator=(const MountainBike &obj);

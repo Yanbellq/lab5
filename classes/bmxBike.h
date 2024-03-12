@@ -9,10 +9,10 @@ class BmxBike : public BikeConfig
     bool hasBrakes;
 public:
     BmxBike();
-    BmxBike(string name, int height, int width, string country, bool hasBrakes, int price);
+    BmxBike(string name, int color, int height, int width, string country, bool hasBrakes, int price);
     ~BmxBike(){};
 
-    string hasBrakesF();
+    string hasBrakesF() const;
 
     friend ostream &operator << (ostream &os, BmxBike &obj);
     BmxBike &operator=(const BmxBike &obj);

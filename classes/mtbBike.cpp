@@ -1,6 +1,5 @@
 #include "mtbBike.h"
-
-string MountainBike::tiresTypeF()
+string MountainBike::tiresTypeF() const
 {
     switch (tiresType)
     {
@@ -25,12 +24,13 @@ string MountainBike::tiresTypeF()
 MountainBike::MountainBike()
     : BikeConfig(), tiresType(0) {}
 
-MountainBike::MountainBike(std::string name, int height, int width, std::string country, int tiresType, int price)
-    : BikeConfig(name, price, height, width, country), tiresType(tiresType) {}
+MountainBike::MountainBike(std::string name, int color, int height, int width, std::string country, int tiresType, int price)
+    : BikeConfig(name, color, price, height, width, country), tiresType(tiresType) {}
 
 ostream &operator << (ostream &os, MountainBike &obj)
 {
     return os << "Name: " << obj.name << endl
+              << obj.colorF()
               << "Height: " << obj.height << endl
               << "Width: " << obj.width << endl
               << obj.tiresTypeF()
@@ -38,8 +38,10 @@ ostream &operator << (ostream &os, MountainBike &obj)
               << "Price: $" << obj.price << endl << endl;
 };
 
-MountainBike &MountainBike::operator=(const MountainBike &obj) {
-    if (this != &obj) {
+MountainBike &MountainBike::operator=(const MountainBike &obj)
+{
+    if (this != &obj)
+    {
         BikeConfig::operator=(obj);
         tiresType = obj.tiresType;
     }
