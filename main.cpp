@@ -6,8 +6,6 @@
 using namespace std;
 int main()
 {
-
-
 //    Client♥
     cout << "Clients______________" << endl;
     Client Client1("Andrei", 15, 15000, false);

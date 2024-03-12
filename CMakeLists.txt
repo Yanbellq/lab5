@@ -7,7 +7,6 @@ add_executable(lab4 main.cpp
         classes/bikeConfig.cpp
         classes/client.cpp
         classes/employer.cpp
-        classes/operator.cpp
         classes/people.cpp
         classes/mtbBike.cpp
         classes/bmxBike.cpp
