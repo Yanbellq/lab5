@@ -1,38 +1,16 @@
 #include "bikeConfig.h"
+BikeConfig::BikeConfig()
+    : BikeConfig("", 0, 0, 0, "") {}
 
-BikeConfig::BikeConfig(string name)
-{
-    this->name = name;
-};
-
-BikeConfig::BikeConfig(string name, int price)
-    : BikeConfig(name)
-{
-    this->price = price;
-};
-
-BikeConfig::BikeConfig(string name, int price, int color)
-    : BikeConfig(name, price)
-{
-    this->color = color;
-};
-
-BikeConfig::BikeConfig(string name, int price, int color, string country)
-    : BikeConfig(name, price, color)
-{
-    this->country = country;
-};
-
-BikeConfig::~BikeConfig()
-{
-    cout << "Destructor called\n";
-};
+BikeConfig::BikeConfig(string name, int price, int height, int width, string country)
+    : name(name), price(price), height(height), width(width), country(country){};
 
 BikeConfig &BikeConfig::operator=(const BikeConfig &obj){
     if (this != &obj) {
         name = obj.name;
         price = obj.price;
-        color = obj.color;
+        height = obj.height;
+        width = obj.width;
         country = obj.country;
     }
     return *this;

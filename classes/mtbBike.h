@@ -6,16 +6,16 @@ using namespace std;
 
 class MountainBike : public BikeConfig
 {
-private:
-    int tiresDiameter;
-    double frameThickness;
-    bool haveSpeedChanger, haveFirstAbsorber, haveLastAbsorber;
-
+    int tiresType;
 public:
-    MountainBike(string name, int price, int color, string country, int tiresDiameter, double frameThickness,
-                 bool haveSpeedChanger, bool haveFirstAbsorber, bool haveLastAbsorber);
+    MountainBike();
+    MountainBike(string name, int height, int width, string country, int tiresType, int price);
+    ~MountainBike(){};
 
-    string show();
+    string tiresTypeF();
+
+    friend ostream &operator << (ostream &os, MountainBike &obj);
+    MountainBike &operator=(const MountainBike &obj);
 };
 
 

@@ -7,11 +7,11 @@ class People
 {
 protected:
     string name;
-    int money;
+    int money, age;
 
 public:
     People();
-    People(string name, int money);
+    People(string name, int money, int age);
 
     People(const People& other);
     People(People&& other) noexcept;

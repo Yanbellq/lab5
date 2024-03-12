@@ -6,13 +6,15 @@ using namespace std;
 
 class BmxBike : public BikeConfig
 {
-    int height, weight, width;
-
+    bool hasBrakes;
 public:
     BmxBike();
-    BmxBike(string name, int price, int color, string country, int height, int weight, int width);
+    BmxBike(string name, int height, int width, string country, bool hasBrakes, int price);
+    ~BmxBike(){};
 
-    string show();
+    string hasBrakesF();
+
+    friend ostream &operator << (ostream &os, BmxBike &obj);
     BmxBike &operator=(const BmxBike &obj);
 };
 

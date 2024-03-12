@@ -1,17 +1,15 @@
 #include "people.h"
 People::People()
-    :People{"",0} {}
+    :People("",0, 0) {}
 
-People::People(string name,int money)
-: name{name},money{money} {};
+People::People(string name,int money, int age)
+    : name(name), money(money), age(age) {};
 
 People::People(const People &other)
-{
-    name = other.name;
-    money = other.money;
-}
+    : name(other.name), money(other.money), age(other.age) {}
 
-People::People(People &&other) noexcept : name{std::move(other.name)}, money{other.money}
+People::People(People &&other) noexcept
+    : name(other.name), money(other.money), age(other.age)
 {
     other.name = "";
     other.money = 0;

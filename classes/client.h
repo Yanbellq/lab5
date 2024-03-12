@@ -6,16 +6,16 @@ using namespace std;
 
 class Client : public People
 {
-    string location, bikeMake;
-    bool buyBike, credit;
-    int age;
+    string bikeMake;
+    bool buyBike;
 public:
     Client();
-    Client(string name, int age, string location, bool buyBike, bool credit);
+    Client(string name, int age, int money, bool buyBike);
+    ~Client(){};
 
-    string show();
+    string buyBikeF();
 
-    ~Client();
+    friend ostream &operator << (ostream &os, Client &obj);
 };
 
 #endif

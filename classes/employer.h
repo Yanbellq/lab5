@@ -11,7 +11,7 @@ class Employer : public People
     static int employers;
 public:
     Employer();
-    Employer(string name, int money, string dateOfBirthday, string placeOfLife);
+    Employer(string name, int age, int money, string dateOfBirthday, string placeOfLife);
     Employer(const Employer& other);
     Employer(Employer &&other);
     ~Employer(){ employers--; };
@@ -19,10 +19,7 @@ public:
 
     static int countOfEmployers() { return employers; };
 
-    friend istream &operator >> (istream &is, Employer &obj);
     friend ostream &operator << (ostream &os, Employer &obj);
-
-
 };
 
 

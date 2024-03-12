@@ -7,16 +7,11 @@ class BikeConfig
 {
 protected:
     string name, country;
-    int price, color;
+    int price, height, width;
 public:
-    BikeConfig() : name(""), price(0), color(0), country("") {};
-
-    BikeConfig(string name);
-    BikeConfig(string name, int price);
-    BikeConfig(string name, int price, int color);
-    BikeConfig(string name, int price, int color, string country);
-
-    ~BikeConfig();
+    BikeConfig();
+    BikeConfig(string name, int price, int height, int width, string country);
+    ~BikeConfig(){};
 
     BikeConfig &operator=(const BikeConfig &obj);
 };
