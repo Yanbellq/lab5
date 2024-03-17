@@ -8,6 +8,8 @@
 #include "classes/mtbBike.h"
 #include "classes/bmxBike.h"
 
+#include "classes/interface.h"
+
 void showInfoOnUI(const People &people);
 void showCatalog(const BikeConfig &bike);
 
@@ -43,6 +45,9 @@ int main()
     system("pause");
 
     showCatalog(*MtbBike1);
+
+    Interface2 Inter2;
+    Inter2.A2();
 
 
     delete MtbBike1;

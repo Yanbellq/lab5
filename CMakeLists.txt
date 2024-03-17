@@ -10,4 +10,7 @@ add_executable(lab4 main.cpp
         classes/people.cpp
         classes/mtbBike.cpp
         classes/bmxBike.cpp
+        classes/interface.cpp
+        classes/interface.h
+        classes/interface.h
 )
