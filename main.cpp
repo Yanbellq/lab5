@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
 //    Client♥
-    cout << "Clients______________" << endl;
+    cout << "Client______________" << endl;
     Client Client1("Andrei", 15, 15000, false);
     cout << Client1;
 
@@ -20,7 +20,7 @@ int main()
     cout << MtbBike1 << MtbBike2;
 
     cout << "BMX-Bike_____________" << endl;
-    BmxBike BmxBike1("erv", 3, 2, 2, "USSR", false, 15000);
+    BmxBike BmxBike1("Desna", 6, 2, 2, "USSR", false, 15000);
     BmxBike BmxBike2 = BmxBike1;
     cout << BmxBike1 << BmxBike2;
 

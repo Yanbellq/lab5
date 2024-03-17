@@ -28,8 +28,8 @@ Employer::Employer(Employer &&other)
 ostream &operator << (ostream &os, Employer &obj)
 {
     return os << "Name: " << obj.name << endl
-              << "Age: " << obj.age << endl
+              << "Age: " << obj.age << "y.o." << endl
               << "Date of Birthday: " << obj.dateOfBirthday << endl
               << "Place of Life: " << obj.placeOfLife << endl
-              << "Salary: " << obj.money << endl << endl;
+              << "Salary: $" << obj.money << endl << endl;
 };

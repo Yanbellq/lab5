@@ -20,8 +20,8 @@ ostream &operator << (ostream &os, BmxBike &obj)
 {
     return os << "Name: " << obj.name << endl
               << obj.colorF()
-              << "Height: " << obj.height << endl
-              << "Width: " << obj.width << endl
+              << "Height: " << obj.height << "i.n." << endl
+              << "Width: " << obj.width << "i.n." << endl
               << obj.hasBrakesF()
               << "Country: " << obj.country << endl
               << "Price: $" << obj.price << endl << endl;

@@ -31,8 +31,8 @@ ostream &operator << (ostream &os, MountainBike &obj)
 {
     return os << "Name: " << obj.name << endl
               << obj.colorF()
-              << "Height: " << obj.height << endl
-              << "Width: " << obj.width << endl
+              << "Height: " << obj.height << "i.n." << endl
+              << "Width: " << obj.width << "i.n." << endl
               << obj.tiresTypeF()
               << "Country: " << obj.country << endl
               << "Price: $" << obj.price << endl << endl;

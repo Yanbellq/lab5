@@ -22,7 +22,7 @@ string Client::buyBikeF()
 ostream &operator << (ostream &os, Client &obj)
 {
     return os << "Name: " << obj.name << endl
-              << "Age: " << obj.age << endl
+              << "Age: " << obj.age << "y.o." << endl
               << "Credit: $" << obj.money << endl
               << obj.buyBikeF() << endl << endl;
 };
