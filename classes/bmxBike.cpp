@@ -1,4 +1,11 @@
 #include "bmxBike.h"
+
+void BmxBike::show() const
+{
+    BikeConfig::show();
+    cout << BmxBike::hasBrakesF();
+};
+
 string BmxBike::hasBrakesF() const
 {
     if (hasBrakes)

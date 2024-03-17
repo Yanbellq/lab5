@@ -13,8 +13,8 @@ public:
     ~MountainBike(){};
 
     string tiresTypeF() const;
+    void show() const;
 
-    friend ostream &operator << (ostream &os, MountainBike &obj);
     MountainBike &operator=(const MountainBike &obj);
 };
 

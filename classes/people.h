@@ -18,7 +18,7 @@ public:
 
     ~People(){};
 
-    friend ostream &operator <<(ostream &os,const People &obj);
+    virtual void show() const;
 };
 
 

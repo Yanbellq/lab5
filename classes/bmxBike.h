@@ -13,6 +13,7 @@ public:
     ~BmxBike(){};
 
     string hasBrakesF() const;
+    void show() const;
 
     friend ostream &operator << (ostream &os, BmxBike &obj);
     BmxBike &operator=(const BmxBike &obj);

@@ -1,6 +1,13 @@
 #include "employer.h"
 int Employer::employers = 0;
 
+void Employer::show() const
+{
+    People::show();
+    cout << "Date of Birthday: " << dateOfBirthday << endl;
+    cout << "Place of Life: " << placeOfLife << endl;
+};
+
 Employer::Employer()
     :People(),dateOfBirthday(""),placeOfLife("")
     { employers++; }

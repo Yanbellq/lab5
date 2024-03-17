@@ -11,12 +11,12 @@ class Employer : public People
     static int employers;
 public:
     Employer();
-    Employer(string name, int age, int money, string dateOfBirthday, string placeOfLife);
+    Employer(string name, int money, int age, string dateOfBirthday, string placeOfLife);
     Employer(const Employer& other);
     Employer(Employer &&other);
     ~Employer(){ employers--; };
 
-
+    void show() const;
     static int countOfEmployers() { return employers; };
 
     friend ostream &operator << (ostream &os, Employer &obj);

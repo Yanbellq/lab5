@@ -1,10 +1,18 @@
 #include "mtbBike.h"
+
+void MountainBike::show() const
+{
+    BikeConfig::show();
+    cout << MountainBike::tiresTypeF();
+};
+
+
 string MountainBike::tiresTypeF() const
 {
     switch (tiresType)
     {
         case 0:
-            return "Tires type: none";
+            return "Tires type: none\n";
             break;
 
         case 1:
@@ -26,17 +34,6 @@ MountainBike::MountainBike()
 
 MountainBike::MountainBike(std::string name, int color, int height, int width, std::string country, int tiresType, int price)
     : BikeConfig(name, color, price, height, width, country), tiresType(tiresType) {}
-
-ostream &operator << (ostream &os, MountainBike &obj)
-{
-    return os << "Name: " << obj.name << endl
-              << obj.colorF()
-              << "Height: " << obj.height << "i.n." << endl
-              << "Width: " << obj.width << "i.n." << endl
-              << obj.tiresTypeF()
-              << "Country: " << obj.country << endl
-              << "Price: $" << obj.price << endl << endl;
-};
 
 MountainBike &MountainBike::operator=(const MountainBike &obj)
 {

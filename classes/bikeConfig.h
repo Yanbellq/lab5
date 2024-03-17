@@ -11,9 +11,11 @@ protected:
 public:
     BikeConfig();
     BikeConfig(string name, int color, int price, int height, int width, string country);
+    BikeConfig(const BikeConfig& other);
     ~BikeConfig(){};
 
-    string colorF();
+    string colorF() const;
+    virtual void show() const;
 
     BikeConfig &operator=(const BikeConfig &obj);
 };

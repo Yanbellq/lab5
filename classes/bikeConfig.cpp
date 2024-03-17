@@ -1,9 +1,27 @@
 #include "bikeConfig.h"
+
+void BikeConfig::show() const
+{
+    cout << "Name: " << name << endl;
+    cout << "Price: $" << price << endl;
+    cout << "Color: " << colorF();
+    cout << "Country: " << country << endl;
+    cout << "Height: " << height << "in." << endl;
+    cout << "Width: " << width << "in." << endl;
+};
+
 BikeConfig::BikeConfig()
-    : BikeConfig("", 0, 0, 0, 0, "") {}
+    : BikeConfig("", 0, 0, 0, 0, "")
+    { }
 
 BikeConfig::BikeConfig(string name, int color, int price, int height, int width, string country)
-    : name(name), color(color), price(price), height(height), width(width), country(country){};
+    : name(name), color(color), price(price), height(height), width(width), country(country)
+    { };
+
+BikeConfig::BikeConfig(const BikeConfig &other)
+    : name(other.name), color(other.color), price(other.price), height(other.height), width(other.width), country(other.country)
+    { }
+
 
 BikeConfig &BikeConfig::operator=(const BikeConfig &obj)
 {
@@ -19,7 +37,7 @@ BikeConfig &BikeConfig::operator=(const BikeConfig &obj)
     return *this;
 }
 
-string BikeConfig::colorF()
+string BikeConfig::colorF() const
 {
     switch (color)
     {

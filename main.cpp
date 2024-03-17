@@ -1,53 +1,49 @@
 #include <iostream>
 
+#include "classes/people.h"
 #include "classes/client.h"
 #include "classes/employer.h"
+
+#include "classes/bikeConfig.h"
 #include "classes/mtbBike.h"
 #include "classes/bmxBike.h"
+
+void showInfoOnUI(const People &people);
+void showCatalog(const BikeConfig &bike);
 
 using namespace std;
 int main()
 {
-//    Client♥
-    cout << "Client______________" << endl;
-    Client Client1("Andrei", 15, 15000, false);
-    cout << Client1;
+    People People1("Artem", 15000, 5);
+    Client Client1("Danya", 10000, 20, true);
+    Employer Employer1("Koka Maksym", 20000, 10, "15.09.2013", "Ukraine");
 
-//    Bike♥
-    cout << "MTB-Bike_____________" << endl;
-    MountainBike MtbBike1("F-la Dragonfly", 3, 15, 15, "GB", 2, 15000);
-    MountainBike MtbBike2 = MtbBike1;
-    cout << MtbBike1 << MtbBike2;
+    BikeConfig Bike1("Bike", 1, 8000, 26, 25, "Germany");
+    BmxBike BmxBike1("Bmx Bike", 5, 15, 20, "France", true, 25000);
+    MountainBike MtbBike1("Mtb Bike", 3, 895, 21, "Italy", 2, 10000);
 
-    cout << "BMX-Bike_____________" << endl;
-    BmxBike BmxBike1("Desna", 6, 2, 2, "USSR", false, 15000);
-    BmxBike BmxBike2 = BmxBike1;
-    cout << BmxBike1 << BmxBike2;
+    showInfoOnUI(People1);
+    showInfoOnUI(Client1);
+    showInfoOnUI(Employer1);
 
+    showCatalog(Bike1);
+    showCatalog(BmxBike1);
+    showCatalog(MtbBike1);
 
-//    Employers♥
-    cout << "\n\nEmployers_____________" << endl;
-
-    cout << "Count of Employers: " << Employer::countOfEmployers() << endl << endl;
-
-    Employer Employer1("Andrew", 15, 160000, "12.02.2004", "USA");
-    cout << "1____________________\n" << Employer1 << endl;
-    cout << "Count of Employers: " << Employer::countOfEmployers() << endl << endl;
-
-    Employer Employer2{Employer1};
-    cout << "2____________________\n" << Employer2 << endl;
-    cout << "Count of Employers: " << Employer::countOfEmployers() << endl << endl;
-
-    Employer Employer3("Kevin", 15, 15000, "15.22.2222", "America");
-    cout << "3___Employer3(before)\n" << Employer3 << endl;
-    cout << "Count of Employers: " << Employer::countOfEmployers() << endl << endl;
-
-    Employer Employer4 = std::move(Employer3);
-    cout << "4___________Employer4\n" << Employer4 << endl;
-    cout << "Count of Employers: " << Employer::countOfEmployers() << endl << endl;
-
-    cout << "5____Employer3(after)\n" << Employer3 << endl;
-    cout << "Count of Employers: " << Employer::countOfEmployers() << endl << endl;
 
     return 0;
 }
+
+void showInfoOnUI(const People &people)
+{
+    cout << "--------------------------------------------\n";
+    people.show();
+    cout << "--------------------------------------------\n";
+};
+
+void showCatalog(const BikeConfig &bike)
+{
+    cout << "--------------------------------------------\n";
+    bike.show();
+    cout << "--------------------------------------------\n";
+};
