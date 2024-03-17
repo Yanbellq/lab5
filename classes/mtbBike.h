@@ -4,16 +4,19 @@
 #include "bikeConfig.h"
 using namespace std;
 
-class MountainBike : public BikeConfig
+class MountainBike final : public BikeConfig
 {
     int tiresType;
 public:
     MountainBike();
     MountainBike(string name, int color, int height, int width, string country, int tiresType, int price);
+
     ~MountainBike(){};
 
     string tiresTypeF() const;
-    void show() const;
+    string colorF() const override;
+    void show() const override;
+
 
     MountainBike &operator=(const MountainBike &obj);
 };

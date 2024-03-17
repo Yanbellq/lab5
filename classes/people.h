@@ -19,6 +19,7 @@ public:
     ~People(){};
 
     virtual void show() const;
+    //virtual void cancel() final = 0;
 };
 
 

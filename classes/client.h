@@ -4,7 +4,7 @@
 #include "people.h"
 using namespace std;
 
-class Client : public People
+class Client final : public People
 {
     bool buyBike;
 public:
@@ -14,6 +14,7 @@ public:
 
     string buyBikeF() const;
     void show() const;
+    //void cancel() override;
 };
 
 #endif

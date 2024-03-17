@@ -6,6 +6,24 @@ void BmxBike::show() const
     cout << BmxBike::hasBrakesF();
 };
 
+string BmxBike::colorF() const
+{
+    switch (color)
+    {
+        case 1:
+            return "Blue";
+            break;
+
+        case 2:
+            return "Brown";
+            break;
+
+        case 3:
+            return "Red";
+            break;
+    };
+}
+
 string BmxBike::hasBrakesF() const
 {
     if (hasBrakes)

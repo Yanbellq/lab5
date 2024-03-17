@@ -14,7 +14,7 @@ public:
     BikeConfig(const BikeConfig& other);
     ~BikeConfig(){};
 
-    string colorF() const;
+    virtual string colorF() const;
     virtual void show() const;
 
     BikeConfig &operator=(const BikeConfig &obj);

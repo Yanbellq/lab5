@@ -4,7 +4,7 @@
 #include "bikeConfig.h"
 using namespace std;
 
-class BmxBike : public BikeConfig
+class BmxBike final : public BikeConfig
 {
     bool hasBrakes;
 public:
@@ -13,11 +13,10 @@ public:
     ~BmxBike(){};
 
     string hasBrakesF() const;
+    string colorF() const override;
     void show() const;
 
     friend ostream &operator << (ostream &os, BmxBike &obj);
     BmxBike &operator=(const BmxBike &obj);
 };
-
-
 #endif

@@ -4,7 +4,7 @@
 #include "people.h"
 using namespace std;
 
-class Employer : public People
+class Employer final : public People
 {
     string dateOfBirthday, placeOfLife;
 

@@ -6,6 +6,28 @@ void MountainBike::show() const
     cout << MountainBike::tiresTypeF();
 };
 
+string MountainBike::colorF() const
+{
+    switch (color)
+    {
+        case 1:
+            return "White";
+            break;
+
+        case 2:
+            return "Black";
+            break;
+
+        case 3:
+            return "Yellow";
+            break;
+
+        case 4:
+            return "Green";
+            break;
+    };
+}
+
 
 string MountainBike::tiresTypeF() const
 {
